@@ -60,7 +60,7 @@
         ></font-text-box>
         <!-- FIXME: Disabled due to #1648. -->
         <bool
-          v-show="false"
+          v-show="true"
           description="Show line numbers"
           :bool="codeBlockLineNumbers"
           :onChange="value => onSelectChange('codeBlockLineNumbers', value)"
@@ -69,6 +69,12 @@
           description="Remove leading and trailing empty lines"
           :bool="trimUnnecessaryCodeBlockEmptyLines"
           :onChange="value => onSelectChange('trimUnnecessaryCodeBlockEmptyLines', value)"
+        ></bool>
+        <bool
+          v-show="true"
+          description="wrap code line when it too long"
+          :bool="wrapCodeBlocks"
+          :onChange="value => onSelectChange('wrapCodeBlocks', value)"
         ></bool>
       </template>
     </compound>
@@ -159,6 +165,11 @@
           :bool="autoCheck"
           :onChange="value => onSelectChange('autoCheck', value)"
         ></bool>
+      <bool
+          description="Wrap text inside code blocks"
+          :bool="wrapCodeBlocks"
+          :onChange="value => onSelectChange('wrapCodeBlocks', value)"
+        ></bool>
       </template>
     </compound>
   </div>
@@ -217,6 +228,7 @@ export default {
       hideQuickInsertHint: state => state.preferences.hideQuickInsertHint,
       hideLinkPopup: state => state.preferences.hideLinkPopup,
       autoCheck: state => state.preferences.autoCheck,
+      wrapCodeBlocks: state => state.preferences.wrapCodeBlocks,
       editorLineWidth: state => state.preferences.editorLineWidth,
       defaultEncoding: state => state.preferences.defaultEncoding,
       autoGuessEncoding: state => state.preferences.autoGuessEncoding,

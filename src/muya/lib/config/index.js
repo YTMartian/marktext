@@ -262,7 +262,7 @@ export const MUYA_DEFAULT_OPTION = Object.freeze({
   bulletListMarker: '-',
   orderListDelimiter: '.',
   tabSize: 4,
-  codeBlockLineNumbers: false,
+  codeBlockLineNumbers: true,
   // bullet/list marker width + listIndentation, tab or Daring Fireball Markdown (4 spaces) --> list indentation
   listIndentation: 1,
   frontmatterType: '-',
